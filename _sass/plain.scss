@@ -6,7 +6,7 @@ $linkColor: #0a59b0;
 $mobileW: 768px;
 $smallMobileW: 480px;
 $bigScreenW: 1600px;
-$leftWidth: 220px;
+$leftWidth: 300px;
 
 *,
 *:before,
@@ -51,7 +51,7 @@ main {
 
   @media screen and (min-width: $bigScreenW) {
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1800px;
   }
   @media screen and (max-width: 1280px) {
     margin: 0 75px;
@@ -70,9 +70,43 @@ main {
 
   .content {
     @media screen and (min-width: $mobileW + 1) {
-      max-width: calc(100% - #{$leftWidth});
-      margin-left: $leftWidth;
+      max-width: calc(100% - #{500px});
+      margin-left: 500px;
       width: 100%;
+    }
+  }
+  .navi {
+    min-width: 230px;
+    height: 100vh;
+    padding-bottom: 12vh;
+    margin-top: 100px;
+    @media screen and (max-width: $smallMobileW) {
+      margin-left: 50px;
+      margin-right: 50px;
+      height: auto;
+      padding: 2vh 30px;
+      background-color: rgb(13, 13, 13);
+    }
+    @media screen and (min-width: $mobileW + 1) {
+      position: fixed;
+      max-width: 300px;
+      margin-right: 100px;
+      margin-left: 50px;
+    }
+    .navi-body {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: rgb(13, 13, 13);
+      .navi-ul {
+        margin-right: 40px;
+        background-color: rgb(13, 13, 13);
+        .navi-post-link {
+          .navi-post-title{
+            background-color: rgb(13, 13, 13);
+            text-align: center;
+          }
+        }
+      }
     }
   }
   .about {
@@ -88,9 +122,11 @@ main {
     }
     @media screen and (min-width: $mobileW + 1) {
       position: fixed;
-      max-width: 280px;
+      max-width: 250px;
+      margin-left: 300px;
+
     }
-    min-width: $leftWidth;
+    min-width: 230;
     justify-content: center;
     flex-direction: column;
     align-items: center;
